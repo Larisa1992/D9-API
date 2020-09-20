@@ -20,5 +20,5 @@ class Post(models.Model):
             , null=True, blank=True, related_name="post_category")
     author = models.ForeignKey(User, null=True, default=None, on_delete=models.CASCADE, related_name="post_author")
 
-    def __str__(self):
-        return f"title {self.title}, publication_date: {self.publication_date}"
+    # def __str__(self):
+    #     return self.title
