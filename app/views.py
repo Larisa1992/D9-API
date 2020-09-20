@@ -7,7 +7,6 @@ from rest_framework import generics
 # ListCreateAPIView может обрабатывать Get и Post (создавать экземпляры класса) запросы
 # ListAPIView может обрабатывать только Get запросы
 # app/posts GET, POST
-
 class PostList(generics.ListCreateAPIView):  
     queryset = Post.objects.all()  
     serializer_class = PostSerializer
@@ -17,12 +16,13 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()  
     serializer_class = PostSerializer
 
-# categories/ GET, POST
-class CategoryList(generics.ListCreateAPIView):  
-    queryset = Category.objects.all()  
+# app/categories/ GET, POST
+class CategoryList(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-# categories/<pk> GET, POST, PATCH, DELETE
-class CategoryDetail(generics.ListCreateAPIView):  
-     queryset = Category.objects.all()  
-     serializer_class = CategoryDetailSerializer
+# app/categories/<pk> GET
+#  RetrieveAPIView единичный объект
+class CategoryDetail(generics. RetrieveAPIView): 
+    queryset = Category.objects.all()
+    serializer_class = CategoryDetailSerializer
