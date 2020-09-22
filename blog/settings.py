@@ -26,8 +26,8 @@ SECRET_KEY = 'a)uk*yvtcif6-s$fx9h8ugmstvr$*!++^yjy)l&^%#73=_!)(c'
 DEBUG = True
 
 # для Heroku
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -77,16 +77,16 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # для Heroku
-# import dj_database_url  
-# DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+import dj_database_url  
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
@@ -127,4 +127,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # для Heroku
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Posr and Categories</title>
+  <style>
+    .link { 
+     background-color:aquamarine;
+     font-size: 100%; /* Размер шрифта в процентах */ 
+    }
+  </style>
+ </head>
+ <body>
+  <h3> Пути проекта</h3>
+    <p> Просмотр списка постов и создание поста по пути <a class='link' href="{% url 'app:post-list' %}">{% url 'app:post-list' %}</a></p>
+    <p> Просмотр/редактирование поста с заданным id по пути <span class='link'>app/posts/id</span></p>
+    <p> Просмотр всех постов по пути <a class='link' href="{% url 'app:categories-list' %}">{% url 'app:categories-list' %}</a></p>
+    <p> Просмотр поста с заданным id по пути <span class='link'>app/categories/id</span></p>
+ </body>
+</html>
