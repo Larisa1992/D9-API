@@ -11,7 +11,7 @@ class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()  
     serializer_class = PostSerializer
 
-# app/posts/<pk> GET, POST, PATCH, DELETE
+# app/posts/<pk> GET, PUT, PATCH, DELETE
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):  
     queryset = Post.objects.all()  
     serializer_class = PostSerializer
@@ -26,3 +26,6 @@ class CategoryList(generics.ListCreateAPIView):
 class CategoryDetail(generics. RetrieveAPIView): 
     queryset = Category.objects.all()
     serializer_class = CategoryDetailSerializer
+
+def index(request):
+    return render(request,'index.html')

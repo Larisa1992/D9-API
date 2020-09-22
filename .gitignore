@@ -3,3 +3,4 @@ venv
 db.sqlite3
 .vscode/
 app/__pycache__/
+blog/__pycache__/
